@@ -1,5 +1,9 @@
 <h2>Liste de contact</h2>
 
-<ul>
-    <li *ngFor="let contact of contacts">{{ contact }}</li>
-</ul>
+<tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.email }}</td>
+    </tr>
+  </tbody>
