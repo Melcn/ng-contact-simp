@@ -9,19 +9,16 @@ import { ModelContact} from './model-contact/contact.model';
 export class ContactService {
 
   contacts: ModelContact[] =  [
-    new ModelContact(1, "DUPONT", "JEAN", "JeanDupont@mail.com", false),
-    new ModelContact(2, "MARTIN", "MARIE", "MarieMartin@mail.com", true),
-    new ModelContact(3, "DURAND", "PIERRE", "Durandp@mail.com", false),
-    new ModelContact(4, "LEFEBVRE", "JULIE", "JulieLfv@mail.com", true)
+    new ModelContact(1, "DUPONT", "JEAN", "0606606060", "JeanDupont@mail.com", false),
+    new ModelContact(2, "MARTIN", "MARIE", "0606606060", "MarieMartin@mail.com", true),
+    new ModelContact(3, "DURAND", "PIERRE", "0606606060", "Durandp@mail.com", false),
+    new ModelContact(4, "LEFEBVRE", "JULIE", "0606606060", "JulieLfv@mail.com", true)
 
   ];
   
 
-
   getContacts(): ModelContact[] {
     return this.contacts;
   }
-
-
 
 }

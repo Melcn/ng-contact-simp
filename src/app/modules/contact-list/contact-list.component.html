@@ -1,9 +1,29 @@
 <h2>Liste de contact</h2>
+<!--
+<div class="container text-center">
+  <ul>
+    <li *ngFor="let contact of contacts">{{ contact.name }} {{ contact.firstName }}</li>
+  </ul>
+</div>
+-->
 
-<tbody>
-    <tr *ngFor="let contact of contacts">
-      <td>{{ contact.name }}</td>
-      <td>{{ contact.firstName }}</td>
-      <td>{{ contact.email }}</td>
-    </tr>
-  </tbody>
+
+  <div class='container'>
+
+    <div class="row">
+        <div *ngFor='let contact of contacts' class="col s6 m4">
+            <div (click)="goToContact(contact)" class="card horizontal" selectedContact>
+                <div class="card-image">
+                    
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p> {{ contact.name }} </p>
+                    </div>
+                </div>   
+            </div> 
+            
+        </div>      
+    </div>
+</div>
+

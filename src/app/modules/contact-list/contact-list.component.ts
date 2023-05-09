@@ -16,8 +16,18 @@ export class ContactListComponent implements OnInit{
   ngOnInit(): void {
     
     this.contacts  = this.contactService.getContacts();
+      
+  }
+
+  goToContact(contact: ModelContact){
     
-    console.log(this.contacts);
+    for(let i = 0; i < this.contacts.length; i++){
+
+      if(contact.id == this.contacts[i].id){
+        return contact;
+      }
+    }
+    
   }
 
 
