@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ContactService } from 'src/app/contact.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModelContact } from 'src/app/model-contact/contact.model';
+import { ContactService } from 'src/app/contact.service';
 
 @Component({
   selector: 'app-selected-contact',
@@ -9,22 +10,22 @@ import { ModelContact } from 'src/app/model-contact/contact.model';
 })
 export class SelectedContactComponent implements OnInit{
 
-  contacts! : ModelContact[];
-  constructor(private contactService: ContactService) { }
+  @Input() contact! : ModelContact;
+  constructor(private route: ActivatedRoute, private router: Router, private contactService: ContactService) { }
 
   ngOnInit(): void {
-    
-    this.contacts  = this.contactService.getContacts();
+      /*
+    this.contact = this.contactService.getContacts(); 
+    const contactId: string|null = this.route.snapshot.paramMap.get('id');
+
+   
+    if(contactId) {
+      this.contact = this.contactService.getContacts((contact: { id: string }) => contact.id === contactId); 
+    }*/
   }
   
   goToContact(contact: ModelContact){
-    
-    for(let i = 0; i < this.contacts.length; i++){
-
-      if(contact.id == this.contacts[i].id){
-        return contact;
-      }
-    }
+    this.router.navigate(['/selectedContact', contact.id]);
     
   }
 }

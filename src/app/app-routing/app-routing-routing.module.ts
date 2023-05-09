@@ -9,17 +9,17 @@ const routes: Routes = [
 
 
   {
-    path: 'Header',
+    path: 'header',
     component: HeaderComponent
   },
 
   {
-    path: 'ContactList',
+    path: 'contactList',
     component: ContactListComponent
   },
 
   {
-    path: 'SelectedContact',
+    path: 'selectedContact/:id',
     component: SelectedContactComponent
   },
 

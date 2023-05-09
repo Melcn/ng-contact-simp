@@ -7,6 +7,7 @@ import { SelectedContactComponent } from './modules/selected-contact/selected-co
 import { HeaderComponent } from './modules/header/header.component';
 import { ContactService } from './contact.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

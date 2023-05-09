@@ -2,7 +2,8 @@
 
 export class ModelContact{
   
-  id: number;
+  id: string;
+  picture: string;
   name: string;
   firstName: string;
   phoneNumber: string;
@@ -10,8 +11,9 @@ export class ModelContact{
   customer: boolean;
 
   
-  constructor(id: number, name: string, firstName: string, phoneNumber: string, email: string,  customer: boolean) {
+  constructor(id: string, picture: string, name: string, firstName: string, phoneNumber: string, email: string,  customer: boolean) {
     this.id = id;
+    this.picture = picture;
     this.name = name;
     this.firstName = firstName;
     this.phoneNumber = phoneNumber;

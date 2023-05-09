@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../../contact.service';
+import { Router } from '@angular/router';
 import { ModelContact } from 'src/app/model-contact/contact.model';
 
 @Component({
@@ -11,7 +12,7 @@ import { ModelContact } from 'src/app/model-contact/contact.model';
 export class ContactListComponent implements OnInit{
 
   contacts! : ModelContact[];
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -20,15 +21,10 @@ export class ContactListComponent implements OnInit{
   }
 
   goToContact(contact: ModelContact){
-    
-    for(let i = 0; i < this.contacts.length; i++){
-
-      if(contact.id == this.contacts[i].id){
-        return contact;
-      }
-    }
-    
+    this.router.navigate(['/contactList', contact]);
   }
+
+  
 
 
   
